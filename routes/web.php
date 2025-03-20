@@ -2,14 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('Home');
-});
+Route::get('/home', function () {
+    $informazioni = "Ciao MONDO!";
+    return view('Home', compact('informazioni'));
+})->name('home');
 
-Route::get('/blog', function () {
-    return view('Blog');
-});
-
-Route::get('/about', function () {
+Route :: get ('/about', function () {
     return view('About');
-});
+})->name('about');
+
+Route :: get ('/blog', function () {
+    return view('Blog');
+})->name('blog');
